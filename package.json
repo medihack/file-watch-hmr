@@ -1,6 +1,6 @@
 {
   "name": "file-watch-hmr",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "File Watch HMR webpack plugin allows watching for file changes during development on the client or server",
   "keywords": [
     "HMR",
