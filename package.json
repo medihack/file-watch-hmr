@@ -1,0 +1,62 @@
+{
+  "name": "file-watch-hmr",
+  "version": "0.1.0",
+  "description": "File Watch HMR webpack plugin allows watching for file changes during development on the client or server",
+  "keywords": [
+    "HMR",
+    "webpack",
+    "plugin",
+    "watch"
+  ],
+  "homepage": "https://github.com/medihack/file-watch-hmr",
+  "bugs": "https://github.com/medihack/file-watch-hmr/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/medihack/file-watch-hmr"
+  },
+  "license": "MIT",
+  "author": "Kai Schlamp",
+  "main": "client.js",
+  "types": "client.d.ts",
+  "scripts": {
+    "test": "jest",
+    "version": "auto-changelog -p && git add CHANGELOG.md",
+    "release": "release-it --only-version"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/__tests__/**/*.spec.js"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/"
+    ],
+    "transform": {
+      "(client|server)-hmr\\.js": "<rootDir>/__tests__/utils/preprocessor.js"
+    }
+  },
+  "dependencies": {
+    "fast-glob": "^3.2.11"
+  },
+  "devDependencies": {
+    "@types/jest": "^28.1.6",
+    "@types/node": "^18.0.6",
+    "auto-changelog": "^2.4.0",
+    "jest": "^28.1.3",
+    "prettier": "^2.6.2",
+    "release-it": "^15.1.2"
+  },
+  "release-it": {
+    "git": {
+      "changelog": "npx auto-changelog --stdout --commit-limit false -u --template https://raw.githubusercontent.com/release-it/release-it/master/templates/changelog-compact.hbs"
+    },
+    "hooks": {
+      "before:init": "yarn test",
+      "after:bump": "npx auto-changelog -p"
+    },
+    "github": {
+      "release": true
+    }
+  }
+}
