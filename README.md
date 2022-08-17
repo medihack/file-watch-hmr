@@ -94,6 +94,6 @@ const { applyServerHMR } = require('../node_modules/file-watch-hmr/server');
 
 A working example with Next.js can be found in the [`examples`](https://github.com/medihack/file-watch-hmr/tree/master/examples) folder.
 
-## Attribution
+## Acknowledgements
 
-This plugin is heavily inspired and code reused from ["i18next-hmr"](https://github.com/felixmosh/i18next-hmr) from [felixmosh](https://github.com/felixmosh). So all kudos to him.
+This plugin is heavily inspired and also a lot of code reused from ["i18next-hmr"](https://github.com/felixmosh/i18next-hmr). So all kudos to [felixmosh](https://github.com/felixmosh).
