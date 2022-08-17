@@ -1,5 +1,5 @@
 export class FileWatchHMRPlugin {
-  static addListener(cb: (file: string) => void): void;
+  static addListener(callback: (changeFile: string) => void): void;
 
-  constructor(options: { files: string[]; folders: [] });
+  constructor(options: { files: string[]; folders: string[] });
 }

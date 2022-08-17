@@ -1,5 +1,5 @@
 declare const server: {
-  applyServerHMR(cb: (file: string) => void): void;
+  applyServerHMR(callback: (changedFile: string) => void): void;
 };
 
 export = server;
